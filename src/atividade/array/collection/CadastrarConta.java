@@ -10,9 +10,24 @@ public class CadastrarConta {
 
     
     public void adicionarConta(Conta conta){
-         this.conta[cont] = conta;
-         cont++;
+        if(this.conta[cont] == null) {
+        	this.conta[cont] = conta;
+            cont++;
+        }else {
+        	adicionarContaFrente(conta);
+        }
     }
+    
+    public void adicionarContaFrente(Conta conta) {
+    	cont++;
+    	if(this.conta[cont] == null) {
+        	this.conta[cont] = conta;
+            cont++;
+        }else {
+        	adicionarConta(conta);
+        }
+    }
+    
     public void adicionarContaPosicao(Conta conta, int posicao){
     	if(!verificarPosicao(posicao)) {
     		throw new IllegalArgumentException("Posição Inválida");
@@ -38,7 +53,7 @@ public class CadastrarConta {
     	if(!verificarPosicao(i)) {
         	throw new IllegalArgumentException("Posição Inválida");
     	}
-    	return conta[i-1];
+    	return conta[i - 1];
     }
     
     public Conta procurarContaNome(String nome){
@@ -56,9 +71,8 @@ public class CadastrarConta {
     public boolean verificarPosicao(int posicao) {
     	if(posicao >= 1 && posicao <= conta.length) {
     		return true;
-    	}else {
-    		return false;
     	}
+    	return false;
     }
     
 }

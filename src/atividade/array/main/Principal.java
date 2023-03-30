@@ -45,7 +45,7 @@ public class Principal {
         CadastrarConta cC = new CadastrarConta();
         Scanner scan = new Scanner(System.in);
         
-        for(int i = 0; i < 1; i++){
+        for(int i = 0; i < 3; i++){
             Conta c = new Conta();
             System.out.println("Digite o nome da Conta:");
                 c.setNome(scan.next());
@@ -53,20 +53,28 @@ public class Principal {
                 c.setValor(scan.nextDouble());
             cC.adicionarConta(c);
         }
-        /*Conta c1 = new Conta();
+        Conta c1 = new Conta();
         System.out.println("Digite o nome da Conta:");
             c1.setNome(scan.next());
         System.out.println("Digite o valor da Conta:");
             c1.setValor(scan.nextDouble());
         System.out.println("Que lugar da fila deseja armazenar?");
             int nAdicionar = scan.nextInt();
-            cC.adicionarContaPosicao(c1, nAdicionar);*/
-        System.out.println("Que conta quer procurar pelo lugar da fila?");
-            int i = scan.nextInt();
-        System.out.println(cC.procurarConta(i));
-        System.out.println("Que conta quer procurar pelo nome?");
-            String nome = scan.next();
-        System.out.println(cC.procurarContaNome(nome));
+            cC.adicionarContaPosicao(c1, nAdicionar);
+        for(int i = 0; i < 2; i++){
+            Conta c = new Conta();
+            System.out.println("Digite o nome da Conta:");
+                c.setNome(scan.next());
+            System.out.println("Digite o valor da Conta:");
+                c.setValor(scan.nextDouble());
+            cC.adicionarConta(c);
+        }
+        //System.out.println("Que conta quer procurar pelo lugar da fila?");
+        //    int i = scan.nextInt();
+        //System.out.println(cC.procurarConta(i));
+        //System.out.println("Que conta quer procurar pelo nome?");
+        //    String nome = scan.next();
+        //System.out.println(cC.procurarContaNome(nome));
         System.out.println(Arrays.toString(cC.listarConta()));
         
     }
