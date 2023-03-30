@@ -17,7 +17,7 @@ public class CadastrarConta {
     	if(!verificarPosicao(posicao)) {
     		throw new IllegalArgumentException("Posição Inválida");
     	}
-    	if(posicao < cont) {
+    	if(posicao - 1 < cont) {
     		contV = cont;
 			while(contV > (posicao - 1)) {
 				this.conta[contV] = this.conta[contV - 1];

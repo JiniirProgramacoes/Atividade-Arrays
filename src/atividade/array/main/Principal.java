@@ -45,7 +45,7 @@ public class Principal {
         CadastrarConta cC = new CadastrarConta();
         Scanner scan = new Scanner(System.in);
         
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < 1; i++){
             Conta c = new Conta();
             System.out.println("Digite o nome da Conta:");
                 c.setNome(scan.next());
@@ -61,7 +61,6 @@ public class Principal {
         System.out.println("Que lugar da fila deseja armazenar?");
             int nAdicionar = scan.nextInt();
             cC.adicionarContaPosicao(c1, nAdicionar);
-            
         System.out.println("Que conta quer procurar pelo lugar da fila?");
             int i = scan.nextInt();
         System.out.println(cC.procurarConta(i - 1));
