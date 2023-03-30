@@ -38,7 +38,7 @@ public class CadastrarConta {
     	if(!verificarPosicao(i)) {
         	throw new IllegalArgumentException("Posição Inválida");
     	}
-    	return conta[i];
+    	return conta[i-1];
     }
     
     public Conta procurarContaNome(String nome){

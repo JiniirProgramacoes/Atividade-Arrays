@@ -53,17 +53,17 @@ public class Principal {
                 c.setValor(scan.nextDouble());
             cC.adicionarConta(c);
         }
-        Conta c1 = new Conta();
+        /*Conta c1 = new Conta();
         System.out.println("Digite o nome da Conta:");
             c1.setNome(scan.next());
         System.out.println("Digite o valor da Conta:");
             c1.setValor(scan.nextDouble());
         System.out.println("Que lugar da fila deseja armazenar?");
             int nAdicionar = scan.nextInt();
-            cC.adicionarContaPosicao(c1, nAdicionar);
+            cC.adicionarContaPosicao(c1, nAdicionar);*/
         System.out.println("Que conta quer procurar pelo lugar da fila?");
             int i = scan.nextInt();
-        System.out.println(cC.procurarConta(i - 1));
+        System.out.println(cC.procurarConta(i));
         System.out.println("Que conta quer procurar pelo nome?");
             String nome = scan.next();
         System.out.println(cC.procurarContaNome(nome));
