@@ -17,13 +17,17 @@ public class CadastrarConta {
     	if(!verificarPosicao(posicao)) {
     		throw new IllegalArgumentException("Posição Inválida");
     	}
-    	contV = cont;
-		while(contV > (posicao - 1)) {
-			this.conta[contV] = this.conta[contV - 1];
-			contV--;
-		}
-		this.conta[contV] = conta;
-		cont++;
+    	if(posicao < cont) {
+    		contV = cont;
+			while(contV > (posicao - 1)) {
+				this.conta[contV] = this.conta[contV - 1];
+				contV--;
+			}
+			this.conta[contV] = conta;
+			cont++;
+    	}else {
+    		this.conta[posicao - 1] = conta;
+    	}
     }
     
     public Conta[] listarConta(){
@@ -39,7 +43,10 @@ public class CadastrarConta {
     
     public Conta procurarContaNome(String nome){
         for(Conta c : this.conta){
-            if(c.getNome().toLowerCase().equals(nome.toLowerCase())){
+        	if(c == null) {
+        		continue;
+        	}
+        	else if(c.getNome().equalsIgnoreCase(nome)){
                 return c;
             }
         }
